@@ -9,19 +9,22 @@
       }
     },
     {
-      "src": "backend/python/app.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/python/app.py"
+      "src": "/api/gst/check",
+      "dest": "api/index.py"
+    },
+    {
+      "src": "/health",
+      "dest": "api/index.py"
     },
     {
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "outputDirectory": "dist"
+  ]
 }
